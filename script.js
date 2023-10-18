@@ -1,6 +1,6 @@
 const GRID_SIZE = 540;
-const SIDE_LENGTH = 16;
 const gridContainer = document.querySelector(".grid");
+const newGridBtn = document.querySelector("button");
 
 const squareHover = (e) => {
     if (e.target.matches(".square")) {
@@ -9,13 +9,28 @@ const squareHover = (e) => {
     }
 }
 
+function removeAllChildren(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
 function generateGrid() {
+    const sideLength = parseInt(prompt("Enter side length:"));
+
+    if (isNaN(sideLength) || sideLength < 1 || sideLength > 100) {
+        console.log("here");
+        alert("Error. Please enter a number between 1 and 100");
+        return;
+    }
+
+    removeAllChildren(gridContainer);
     //row by row
-    for (let i = 1; i <= SIDE_LENGTH; i++) {
+    for (let i = 1; i <= sideLength; i++) {
         let row = document.createElement("div");
         gridContainer.appendChild(row);
         row.className = "row";
-        for (let j = 1; j <= SIDE_LENGTH; j++) {
+        for (let j = 1; j <= sideLength; j++) {
             let square = document.createElement("div");
             square.className = "square";
             row.appendChild(square);
@@ -26,3 +41,4 @@ function generateGrid() {
 //main
 generateGrid();
 document.addEventListener("mouseover", squareHover);
+newGridBtn.addEventListener("click", () => generateGrid());
