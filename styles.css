@@ -1,4 +1,31 @@
+:root {
+    --grid-size: 600px;
+}
+
 * {
     padding: 0px;
     margin: 0px;
+}
+
+.grid {
+    width: var(--grid-size);
+    height: var(--grid-size);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+}
+
+.row {
+    display: flex;
+    flex: 1;
+}
+
+.square {
+    flex: 1;
+    flex-wrap: wrap;
+    border: 1px solid black;
+}
+
+.bg-hover {
+    background-color:blue;
 }
