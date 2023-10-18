@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "BigBlueTerm";
+    src: url('BigBlueTerm437NerdFont-Regular.ttf') format('truetype');
+  }
+
 :root {
     --grid-size: 600px;
 }
@@ -17,9 +22,11 @@ body {
 }
 
 button {
-    width: 120px;
+    font-family: "BigBlueTerm", sans-serif;
+    font-size: 24px;
+    width: 200px;
     padding: 16px;
-    flex: 0 1 auto;;
+    flex: 1 1 auto;
 }
 
 .grid {
