@@ -9,16 +9,20 @@ const squareHover = (e) => {
     }
 }
 
-//Generate squares row by row
-for (let i = 1; i <= SIDE_LENGTH; i++) {
-    let row = document.createElement("div");
-    gridContainer.appendChild(row);
-    row.className = "row";
-    for (let j = 1; j <= SIDE_LENGTH; j++) {
-        let square = document.createElement("div");
-        square.className = "square";
-        row.appendChild(square);
+function generateGrid() {
+    //row by row
+    for (let i = 1; i <= SIDE_LENGTH; i++) {
+        let row = document.createElement("div");
+        gridContainer.appendChild(row);
+        row.className = "row";
+        for (let j = 1; j <= SIDE_LENGTH; j++) {
+            let square = document.createElement("div");
+            square.className = "square";
+            row.appendChild(square);
+        }
     }
 }
 
+//main
+generateGrid();
 document.addEventListener("mouseover", squareHover);
