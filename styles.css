@@ -7,12 +7,28 @@
     margin: 0px;
 }
 
+body {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 32px;
+    background-color: darkred;
+}
+
+button {
+    width: 120px;
+    padding: 16px;
+    flex: 0 1 auto;;
+}
+
 .grid {
     width: var(--grid-size);
     height: var(--grid-size);
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
+    border: 10px inset darkred;
+    background-color: rgb(200, 199, 199);
 }
 
 .row {
@@ -23,9 +39,8 @@
 .square {
     flex: 1;
     flex-wrap: wrap;
-    border: 1px solid black;
 }
 
 .bg-hover {
-    background-color:blue;
+    background-color:black;
 }

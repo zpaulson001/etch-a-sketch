@@ -1,11 +1,9 @@
-const GRID_SIZE = 540;
 const gridContainer = document.querySelector(".grid");
 const newGridBtn = document.querySelector("button");
 
 const squareHover = (e) => {
     if (e.target.matches(".square")) {
         e.target.classList.add("bg-hover");
-        console.log(e.target.className);
     }
 }
 
@@ -16,7 +14,7 @@ function removeAllChildren(parent) {
 }
 
 function generateGrid() {
-    const sideLength = parseInt(prompt("Enter side length:"));
+    const sideLength = parseInt(prompt("Enter number of square per side:"));
 
     if (isNaN(sideLength) || sideLength < 1 || sideLength > 100) {
         console.log("here");
@@ -25,6 +23,7 @@ function generateGrid() {
     }
 
     removeAllChildren(gridContainer);
+    
     //row by row
     for (let i = 1; i <= sideLength; i++) {
         let row = document.createElement("div");
