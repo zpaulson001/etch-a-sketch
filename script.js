@@ -40,4 +40,4 @@ function generateGrid() {
 //main
 generateGrid();
 document.addEventListener("mouseover", squareHover);
-newGridBtn.addEventListener("click", () => generateGrid());
+newGridBtn.addEventListener("click", generateGrid);
